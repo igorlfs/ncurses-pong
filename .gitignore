@@ -1,0 +1,8 @@
+# Track Progress
+TODO
+# Executable
+binary
+# Object dir
+obj/
+# clangd cache dir
+.cache/
