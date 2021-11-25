@@ -15,7 +15,6 @@ class Board {
     WINDOW *getWin() { return this->window; }
 
     /// Operations
-    bool isOutOfBounds(const int &y, const int &x) const;
     void print(const int &y, const int &x, const chtype &c) const;
 
   private:

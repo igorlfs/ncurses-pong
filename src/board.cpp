@@ -9,10 +9,6 @@ Board::Board(WINDOW *win) : window(win), yMax(win->_maxy), xMax(win->_maxx) {
     leaveok(this->window, true);
 }
 
-bool Board::isOutOfBounds(const int &y, const int &x) const {
-    return (y <= 0 || y >= this->yMax || x <= 0 || x >= this->xMax);
-}
-
 void Board::print(const int &y, const int &x, const chtype &c) const {
     mvwaddch(this->window, y, x, c);
 }
