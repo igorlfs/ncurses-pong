@@ -13,19 +13,18 @@ namespace drawable {
 class Drawable {
 
   public:
-    pair<int, int> getHead() const;
-    pair<int, int> *getBody() const { return this->body; }
     chtype getChar() const { return this->character; }
+    pair<int, int> getHead() const;
+    pair<int, int> getTail() const;
 
-    void setHead(const pair<int, int> &p) { this->head = p; }
+    void setHead(const pair<int, int> &p);
     void setChar(const char &c, const int &n) {
         this->character = c | A_BOLD | COLOR_PAIR(n);
     }
 
-    void printHead(board::Board b) const {
-        b.print(this->prevHead.first, this->prevHead.second, BLANK);
-        b.print(this->head.first, this->head.second, this->character);
-    }
+    bool isInsideBody(const pair<int, int> &p) const;
+
+    void printHead(board::Board b) const;
     void printBody(board::Board b) const;
 
   protected:
