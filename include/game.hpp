@@ -22,6 +22,6 @@ class Game {
     board::Board table;
 
     int pause();
-    void gameOver(const std::string &message);
+    void gameOver() { this->isGameOver = true; }
 };
 } // namespace game
