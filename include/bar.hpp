@@ -7,9 +7,9 @@ namespace drawable {
 
 static constexpr char BAR_CH = '|';
 
-class Bar : public Drawable {
+class bar : public Drawable {
   public:
-    Bar(const int &x);
+    bar(const int &x);
     pair<int, int> moveUp();
     pair<int, int> moveDown();
 

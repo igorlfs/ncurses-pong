@@ -4,26 +4,27 @@
 
 namespace playable {
 
-class Player {
+class player {
   public:
-    Player(const int &x, const int &u, const int &d) : bar(x), up(u), down(d) {}
+    player(const int &x, const int &u, const int &d)
+        : racket(x), up(u), down(d) {}
 
     int getScore() { return this->score; }
-    drawable::Bar getBar() { return this->bar; }
-    pair<int, int> getPrevBody() { return this->prevBody; }
+    drawable::bar getBar() { return this->racket; }
+    pair<int, int> getLegacy() { return this->legacyPosition; }
 
     void incScore() { ++this->score; }
 
     bool isMove(const int &c) const { return c == this->up || c == this->down; }
     bool canMove(const int &c, const int &max) const;
-    void move(const int &c, const int &max);
+    void move(const int &c);
 
     void print(board::Board b) const;
 
   private:
     int score{0};
-    drawable::Bar bar;
+    drawable::bar racket;
     int up, down;
-    pair<int, int> prevBody;
+    pair<int, int> legacyPosition;
 };
 } // namespace playable
