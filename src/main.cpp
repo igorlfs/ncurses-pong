@@ -13,19 +13,18 @@ int main() {
     start_color();
     use_default_colors();
 
-    static constexpr int y = 24, x = 100;
+    static constexpr int y = 12, x = 36;
     int yMax, xMax;
     getmaxyx(stdscr, yMax, xMax);
     WINDOW *gameWindow = newwin(y, x, (yMax - y) / 2, (xMax - x) / 2);
     game::pong g(gameWindow);
 
-    halfdelay(5);
+    halfdelay(1);
     while (!g.isOver()) {
         g.print();
         g.input();
         g.update();
     }
-    getch();
 
     delwin(gameWindow);
     endwin();
