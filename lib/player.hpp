@@ -10,7 +10,7 @@ class Player {
 
     // Getters
     [[nodiscard]] int getScore() const { return this->score; }
-    [[nodiscard]] Bar getBar() { return this->racket; }
+    [[nodiscard]] Bar getBar() const { return this->racket; }
     [[nodiscard]] pair<int, int> getLegacy() { return this->legacyPosition; }
 
     // Lookup

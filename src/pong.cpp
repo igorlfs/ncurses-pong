@@ -19,7 +19,7 @@ void Pong::update() {
     }
 
     // Check collision ball / player
-    for (auto &player : this->players) {
+    for (const auto &player : this->players) {
         if (player.getBar().isInsideBody(newBall)) {
             this->ball.flipHorizontally();
             newBall = this->ball.calculateNewHead();
