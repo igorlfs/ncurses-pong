@@ -1,7 +1,5 @@
+#include "msgassert.hpp"
 #include "pong.hpp"
-#include <cstdlib>
-
-void checkColor();
 
 int main() {
     initscr();
@@ -9,8 +7,7 @@ int main() {
     noecho();
     curs_set(0); // Hide cursor
     refresh();
-    // TODO: use msgassert
-    checkColor();
+    assert(has_colors(), "No color support!");
     start_color();
     use_default_colors();
 
@@ -31,12 +28,4 @@ int main() {
 
     delwin(gameWindow);
     endwin();
-}
-
-void checkColor() {
-    if (!has_colors()) {
-        printw("No color support");
-        getch();
-        abort();
-    }
 }
