@@ -31,7 +31,9 @@ bool Drawable::isInsideBody(const pair<int, int> &p) const {
 
 /// @brief prints head to b
 void Drawable::printHead(Board b) const {
-    b.print(this->prevHead.first, this->prevHead.second, BLANK);
+    if (this->prevHead != DEFAULT_PAIR) {
+        b.print(this->prevHead.first, this->prevHead.second, BLANK);
+    }
     b.print(this->head.first, this->head.second, this->character);
 }
 

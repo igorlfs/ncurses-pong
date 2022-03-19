@@ -26,7 +26,7 @@ class Player {
     int score{0};
     Bar racket;
     int up, down;
-    pair<int, int> legacyPosition;
+    pair<int, int> legacyPosition{Drawable::DEFAULT_PAIR};
 
     [[nodiscard]] bool isOutOfBounds(const int &c, const int &max) const;
     [[nodiscard]] bool isMove(const int &c) const {

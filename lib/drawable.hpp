@@ -11,6 +11,7 @@ class Drawable {
 
   public:
     static constexpr int BLANK{(int)' '};
+    static constexpr pair<int, int> DEFAULT_PAIR{0, 0};
 
     // Getters
     [[nodiscard]] chtype getChar() const { return this->character; }
@@ -33,7 +34,7 @@ class Drawable {
   protected:
     std::vector<pair<int, int>> body;
     pair<int, int> head;
-    pair<int, int> prevHead;
+    pair<int, int> prevHead{DEFAULT_PAIR};
 
   private:
     chtype character;

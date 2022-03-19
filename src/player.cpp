@@ -19,7 +19,9 @@ void Player::move(const int &c) {
 }
 
 void Player::print(Board b) const {
-    b.print(this->legacyPosition.first, this->legacyPosition.second,
-            Drawable::BLANK);
+    if (this->legacyPosition != Drawable::DEFAULT_PAIR) {
+        b.print(this->legacyPosition.first, this->legacyPosition.second,
+                Drawable::BLANK);
+    }
     this->racket.printBody(b);
 }
