@@ -6,26 +6,28 @@
 
 using std::pair;
 
-static constexpr int BLANK{(int)' '};
-
-namespace drawable {
-
 class Drawable {
 
   public:
-    chtype getChar() const { return this->character; }
-    pair<int, int> getHead() const;
-    pair<int, int> getTail() const;
+    static constexpr int BLANK{(int)' '};
 
+    // Getters
+    [[nodiscard]] chtype getChar() const { return this->character; }
+    [[nodiscard]] pair<int, int> getHead() const;
+    [[nodiscard]] pair<int, int> getTail() const;
+
+    // Setters
     void setHead(const pair<int, int> &p);
     void setChar(const char &c, const int &n) {
         this->character = c | A_BOLD | COLOR_PAIR(n);
     }
 
-    bool isInsideBody(const pair<int, int> &p) const;
+    // Lookup
+    [[nodiscard]] bool isInsideBody(const pair<int, int> &p) const;
 
-    void printHead(board::Board b) const;
-    void printBody(board::Board b) const;
+    // Operations
+    void printHead(Board b) const;
+    void printBody(Board b) const;
 
   protected:
     pair<int, int> *body = nullptr;
@@ -36,4 +38,3 @@ class Drawable {
   private:
     chtype character;
 };
-} // namespace drawable

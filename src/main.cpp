@@ -9,26 +9,28 @@ int main() {
     noecho();
     curs_set(0); // Hide cursor
     refresh();
+    // TODO: use msgassert
     checkColor();
     start_color();
     use_default_colors();
 
-    static constexpr int y = 12, x = 36;
-    int yMax, xMax;
+    static constexpr int Y = 10;
+    static constexpr int X = 36;
+    int yMax;
+    int xMax;
     getmaxyx(stdscr, yMax, xMax);
-    WINDOW *gameWindow = newwin(y, x, (yMax - y) / 2, (xMax - x) / 2);
-    game::pong g(gameWindow);
+    WINDOW *gameWindow = newwin(Y, X, (yMax - Y) / 2, (xMax - X) / 2);
+    Pong g(gameWindow);
 
     halfdelay(1);
     while (!g.isOver()) {
         g.print();
-        g.input();
+        g.getInput();
         g.update();
     }
 
     delwin(gameWindow);
     endwin();
-    return 0;
 }
 
 void checkColor() {

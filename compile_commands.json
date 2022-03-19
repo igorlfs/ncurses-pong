@@ -1,146 +1,138 @@
 [
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/board.o",
       "src/board.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/board.cpp",
-    "output": "/home/user/code/games/pong/obj/board.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/board.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/board.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/drawable.o",
       "src/drawable.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/drawable.cpp",
-    "output": "/home/user/code/games/pong/obj/drawable.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/drawable.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/drawable.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/ball.o",
       "src/ball.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/ball.cpp",
-    "output": "/home/user/code/games/pong/obj/ball.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/ball.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/ball.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/bar.o",
       "src/bar.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/bar.cpp",
-    "output": "/home/user/code/games/pong/obj/bar.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/bar.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/bar.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/player.o",
       "src/player.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/player.cpp",
-    "output": "/home/user/code/games/pong/obj/player.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/player.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/player.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/game.o",
       "src/game.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/game.cpp",
-    "output": "/home/user/code/games/pong/obj/game.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/game.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/game.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/pong.o",
       "src/pong.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/pong.cpp",
-    "output": "/home/user/code/games/pong/obj/pong.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/pong.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/pong.o"
   },
   {
     "arguments": [
-      "/bin/clang++",
+      "/usr/bin/g++",
       "-Wall",
       "-Wextra",
       "-std=c++17",
       "-g",
-      "-fstandalone-debug",
-      "-Iinclude",
+      "-Ilib",
       "-c",
       "-o",
       "obj/main.o",
       "src/main.cpp"
     ],
-    "directory": "/home/user/code/games/pong",
-    "file": "/home/user/code/games/pong/src/main.cpp",
-    "output": "/home/user/code/games/pong/obj/main.o"
+    "directory": "/home/user/code/ncurses-pong",
+    "file": "/home/user/code/ncurses-pong/src/main.cpp",
+    "output": "/home/user/code/ncurses-pong/obj/main.o"
   }
 ]

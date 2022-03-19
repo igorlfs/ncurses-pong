@@ -1,7 +1,5 @@
 #include "board.hpp"
 
-using namespace board;
-
 Board::Board(WINDOW *win) : window(win), yMax(win->_maxy), xMax(win->_maxx) {
     box(this->window, 0, 0);
     wrefresh(this->window);

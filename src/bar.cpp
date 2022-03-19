@@ -1,27 +1,32 @@
 #include "bar.hpp"
 
-using namespace drawable;
+Bar::Bar(const int &x, const int &size) {
+    static const char BAR_CH = ' ';
 
-bar::bar(const int &x) {
-    init_pair(1, COLOR_BLUE, COLOR_BLACK);
+    this->bodySize = size;
+
+    init_pair(1, -1, COLOR_RED);
     this->setChar(BAR_CH, 1);
-    this->bodySize = SIZE;
-    this->body = &(new pair<int, int>)[this->bodySize];
+
+    // FIXME: memleak
+    this->body = new pair<int, int>[this->bodySize];
     for (int i = 0; i < this->bodySize; ++i) {
         this->body[i] = {i + 1, x};
     }
 }
 
-pair<int, int> bar::moveUp() {
+pair<int, int> Bar::moveUp() {
     pair<int, int> p = this->body[this->bodySize - 1];
-    for (int i = 0; i < this->bodySize; ++i)
+    for (int i = 0; i < this->bodySize; ++i) {
         this->body[i].first--;
+    }
     return p;
 }
 
-pair<int, int> bar::moveDown() {
+pair<int, int> Bar::moveDown() {
     pair<int, int> p = this->body[0];
-    for (int i = 0; i < this->bodySize; ++i)
+    for (int i = 0; i < this->bodySize; ++i) {
         this->body[i].first++;
+    }
     return p;
 }

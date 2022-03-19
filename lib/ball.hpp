@@ -1,22 +1,26 @@
-#include "board.hpp"
 #include "drawable.hpp"
-
-namespace drawable {
-
-static constexpr char BALL_CH = '*';
 
 class Ball : public Drawable {
   public:
+    // Contructors
     Ball(const pair<int, int> &p);
+
+    // Getters
+    pair<int, int> getDefault() { return start; }
+
+    // Setters
     void setPosition(const int &y, const int &x);
 
-    pair<int, int> calculateNewHead();
+    // Modifiers
     void flipHorizontally() { this->goingLeft = !this->goingLeft; }
     void flipVertically() { this->goingUp = !this->goingUp; }
 
+    // Operations
+    pair<int, int> calculateNewHead();
+
   private:
+    pair<int, int> start;
+
     bool goingUp{true};
     bool goingLeft{false};
 };
-
-} // namespace drawable

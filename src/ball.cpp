@@ -1,13 +1,16 @@
 #include "ball.hpp"
 
-using namespace drawable;
-
 Ball::Ball(const pair<int, int> &p) {
-    init_pair(2, COLOR_YELLOW, COLOR_BLACK);
+    static constexpr char BALL_CH = '*';
+
+    init_pair(2, COLOR_YELLOW, -1);
+
     this->setChar(BALL_CH, 2);
     this->setHead(p);
+    this->start = p;
 }
 
+// @brief update head based on current directions
 pair<int, int> Ball::calculateNewHead() {
 
     pair<int, int> nextHead;

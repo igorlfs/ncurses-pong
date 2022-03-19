@@ -2,16 +2,17 @@
 
 #include <ncurses.h>
 
-namespace board {
 class Board {
   public:
     /// Constructors
     Board(WINDOW *win);
 
     /// Getters
-    int getX() { return this->xMax - 1; }
-    int getY() { return this->yMax - 1; }
-    int getSize() { return (this->xMax - 1) * (this->yMax - 1); }
+    [[nodiscard]] int getX() const { return this->xMax - 1; }
+    [[nodiscard]] int getY() const { return this->yMax - 1; }
+    [[nodiscard]] int getSize() const {
+        return (this->xMax - 1) * (this->yMax - 1);
+    }
     WINDOW *getWin() { return this->window; }
 
     /// Operations
@@ -21,4 +22,3 @@ class Board {
     WINDOW *window;
     int yMax, xMax;
 };
-} // namespace board
