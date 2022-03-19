@@ -1,17 +1,18 @@
 #include "drawable.hpp"
+#include <algorithm>
 
 /// @return first body position if defined or else head
 pair<int, int> Drawable::getHead() const {
-    if (this->body != nullptr) {
-        return this->body[0];
+    if (!this->body.empty()) {
+        return this->body.front();
     }
     return this->head;
 }
 
 /// @return last body position if defined or else head
 pair<int, int> Drawable::getTail() const {
-    if (this->body != nullptr) {
-        return this->body[this->bodySize - 1];
+    if (!this->body.empty()) {
+        return this->body.back();
     }
     return this->head;
 }
@@ -22,14 +23,10 @@ void Drawable::setHead(const pair<int, int> &p) {
     this->head = p;
 }
 
-/// @brief returns true if p is inside body. Always false if size = 0
+/// @brief returns true if p is inside body
 bool Drawable::isInsideBody(const pair<int, int> &p) const {
-    for (int i = 0; i < this->bodySize; ++i) {
-        if (p == this->body[i]) {
-            return true;
-        }
-    }
-    return false;
+    auto compare = [&p](pair<int, int> q) { return q == p; };
+    return any_of(this->body.begin(), this->body.end(), compare);
 }
 
 /// @brief prints head to b
@@ -40,8 +37,7 @@ void Drawable::printHead(Board b) const {
 
 /// @brief prints body to b
 void Drawable::printBody(Board b) const {
-    for (int i = 0; i < this->bodySize; ++i) {
-        pair<int, int> p = this->body[i];
+    for (const auto &p : this->body) {
         b.print(p.first, p.second, this->getChar());
     }
 }

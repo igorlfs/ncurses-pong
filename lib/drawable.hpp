@@ -3,6 +3,7 @@
 #include "board.hpp"
 #include <ncurses.h>
 #include <utility>
+#include <vector>
 
 using std::pair;
 
@@ -30,8 +31,7 @@ class Drawable {
     void printBody(Board b) const;
 
   protected:
-    pair<int, int> *body = nullptr;
-    int bodySize = 0;
+    std::vector<pair<int, int>> body;
     pair<int, int> head;
     pair<int, int> prevHead;
 

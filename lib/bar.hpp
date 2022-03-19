@@ -8,9 +8,7 @@ class Bar : public Drawable {
     Bar(const int &x, const int &size);
 
     // Getters
-    [[nodiscard]] pair<int, int> getTail() const {
-        return this->body[this->bodySize - 1];
-    }
+    [[nodiscard]] pair<int, int> getTail() const { return this->body.back(); }
 
     // Modifiers
     pair<int, int> moveUp();
