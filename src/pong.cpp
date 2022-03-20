@@ -29,16 +29,30 @@ void Pong::update() {
     if (newBall.first <= 1 || newBall.first >= this->board.getY()) {
         this->ball.flipVertically();
     }
-
-    if (newBall.second <= 0 || newBall.second >= this->board.getX() + 1) {
+    if (newBall.second < 1 || newBall.second > this->board.getX()) {
+        (newBall.second < 1) ? this->players[1].incrementScore()
+                             : this->players[0].incrementScore();
+        if (this->players[0].getScore() > MATCH_POINT ||
+            this->players[1].getScore() > MATCH_POINT) {
+            this->isGameOver = true;
+        }
         newBall = this->ball.getDefault();
     }
 
-    // TODO: score
     this->ball.setHead(newBall);
 }
 
 void Pong::print() {
+
+    int x = this->board.getX() / 2;
+    for (int i = 1; i <= this->board.getY(); ++i) {
+        this->board.print(i, x, '|');
+    }
+    char ch0 = this->players[0].getScore();
+    this->board.print(1, x - 3, ch0);
+    char ch1 = this->players[1].getScore();
+    this->board.print(1, x + 3, ch1);
+
     this->ball.printHead(this->board);
 
     for (auto &player : this->players) {

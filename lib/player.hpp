@@ -9,7 +9,7 @@ class Player {
         : racket(x, 3), up(u), down(d) {}
 
     // Getters
-    [[nodiscard]] int getScore() const { return this->score; }
+    [[nodiscard]] char getScore() const { return this->score; }
     [[nodiscard]] Bar getBar() const { return this->racket; }
     [[nodiscard]] pair<int, int> getLegacy() { return this->legacyPosition; }
 
@@ -18,12 +18,15 @@ class Player {
         return isMove(c) && isOutOfBounds(c, max);
     }
 
+    // Modifiers
+    void incrementScore() { this->score++; }
+
     // Operations
     void move(const int &c);
     void print(Board b) const;
 
   private:
-    int score{0};
+    char score{'0'};
     Bar racket;
     int up, down;
     pair<int, int> legacyPosition{Drawable::DEFAULT_PAIR};
