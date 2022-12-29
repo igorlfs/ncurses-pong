@@ -13,23 +13,23 @@ class Drawable {
     static constexpr int BLANK{(int)' '};
     static constexpr pair<int, int> DEFAULT_PAIR{0, 0};
 
-    // Getters
+    /// Getters
     [[nodiscard]] chtype getChar() const { return this->character; }
     [[nodiscard]] pair<int, int> getHead() const;
     [[nodiscard]] pair<int, int> getTail() const;
 
-    // Setters
-    void setHead(const pair<int, int> &p);
-    void setChar(const char &c, const int &n) {
-        this->character = c | A_BOLD | COLOR_PAIR(n);
+    /// Setters
+    void setHead(const pair<int, int> &location);
+    void setChar(const char &cha, const int &n) {
+        this->character = cha | A_BOLD | COLOR_PAIR(n);
     }
 
-    // Lookup
-    [[nodiscard]] bool isInsideBody(const pair<int, int> &p) const;
+    /// Lookup
+    [[nodiscard]] bool isInsideBody(const pair<int, int> &location) const;
 
-    // Operations
-    void printHead(Board b) const;
-    void printBody(Board b) const;
+    /// Operations
+    void printHead(Board board) const;
+    void printBody(Board board) const;
 
   protected:
     std::vector<pair<int, int>> body;

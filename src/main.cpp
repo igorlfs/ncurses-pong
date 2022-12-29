@@ -11,19 +11,20 @@ int main() {
     start_color();
     use_default_colors();
 
-    static constexpr int Y = 10;
-    static constexpr int X = 36;
+    static constexpr int HEIGHT = 10;
+    static constexpr int WIDTH = 36;
     int yMax;
     int xMax;
     getmaxyx(stdscr, yMax, xMax);
-    WINDOW *gameWindow = newwin(Y, X, (yMax - Y) / 2, (xMax - X) / 2);
-    Pong g(gameWindow);
+    WINDOW *gameWindow =
+        newwin(HEIGHT, WIDTH, (yMax - HEIGHT) / 2, (xMax - WIDTH) / 2);
+    Pong game(gameWindow);
 
     halfdelay(1);
-    while (!g.isOver()) {
-        g.print();
-        g.getInput();
-        g.update();
+    while (!game.isOver()) {
+        game.print();
+        game.getInput();
+        game.update();
     }
 
     delwin(gameWindow);

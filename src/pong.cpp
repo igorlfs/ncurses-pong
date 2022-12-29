@@ -10,7 +10,7 @@ void Pong::getInput() {
 }
 
 void Pong::update() {
-    pair<int, int> newBall = this->ball.calculateNewHead();
+    pair<int, int> newBall = this->ball.calculateNextLocation();
 
     for (auto &player : this->players) {
         if (player.canMove(this->currentInput, this->board.getY())) {
@@ -22,7 +22,7 @@ void Pong::update() {
     for (const auto &player : this->players) {
         if (player.getBar().isInsideBody(newBall)) {
             this->ball.flipHorizontally();
-            newBall = this->ball.calculateNewHead();
+            newBall = this->ball.calculateNextLocation();
         }
     }
 

@@ -4,26 +4,26 @@
 
 class Player {
   public:
-    // Constructors
+    /// Constructors
     Player(const int &x, const int &u, const int &d)
         : racket(x, 3), up(u), down(d) {}
 
-    // Getters
+    /// Getters
     [[nodiscard]] char getScore() const { return this->score; }
     [[nodiscard]] Bar getBar() const { return this->racket; }
     [[nodiscard]] pair<int, int> getLegacy() { return this->legacyPosition; }
 
-    // Lookup
+    /// Lookup
     [[nodiscard]] bool canMove(const int &c, const int &max) const {
         return isMove(c) && isOutOfBounds(c, max);
     }
 
-    // Modifiers
+    /// Modifiers
     void incrementScore() { this->score++; }
 
-    // Operations
-    void move(const int &c);
-    void print(Board b) const;
+    /// Operations
+    void move(const int &direction);
+    void print(Board board) const;
 
   private:
     char score{'0'};

@@ -6,22 +6,23 @@
 #include "board.hpp"
 #include "player.hpp"
 
-constexpr int VIM_UP = (int)'k';
-constexpr int VIM_DOWN = (int)'j';
-constexpr int DOWN = (int)'n';
-constexpr int UP = (int)'m';
+constexpr int PLAYER1_UP = (int)'m';
+constexpr int PLAYER1_DOWN = (int)'n';
+constexpr int PLAYER2_UP = (int)'k';
+constexpr int PLAYER2_DOWN = (int)'j';
 
 class Pong {
   public:
-    // Contructors
+    /// Contructors
     Pong(WINDOW *win)
         : board(win), ball({win->_maxy / 2, win->_maxx / 2}),
-          players{{{win->_maxx - 1, UP, DOWN}, {1, VIM_UP, VIM_DOWN}}} {}
+          players{{{win->_maxx - 1, PLAYER1_UP, PLAYER1_DOWN},
+                   {1, PLAYER2_UP, PLAYER2_DOWN}}} {}
 
-    // Lookup
+    /// Lookup
     [[nodiscard]] bool isOver() const { return this->isGameOver; }
 
-    // Operations
+    /// Operations
     void getInput();
     void update();
     void print();

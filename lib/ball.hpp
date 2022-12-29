@@ -2,21 +2,21 @@
 
 class Ball : public Drawable {
   public:
-    // Contructors
-    Ball(const pair<int, int> &p);
+    /// Contructors
+    Ball(const pair<int, int> &location);
 
-    // Getters
+    /// Getters
     pair<int, int> getDefault() { return start; }
 
-    // Setters
+    /// Setters
     void setPosition(const int &y, const int &x);
 
-    // Modifiers
+    /// Modifiers
     void flipHorizontally() { this->goingLeft = !this->goingLeft; }
     void flipVertically() { this->goingUp = !this->goingUp; }
 
-    // Operations
-    pair<int, int> calculateNewHead();
+    /// Operations
+    pair<int, int> calculateNextLocation();
 
   private:
     pair<int, int> start;

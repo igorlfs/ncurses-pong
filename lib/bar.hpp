@@ -4,13 +4,13 @@
 
 class Bar : public Drawable {
   public:
-    // Constructors
+    /// Constructors
     Bar(const int &x, const int &size);
 
-    // Getters
+    /// Getters
     [[nodiscard]] pair<int, int> getTail() const { return this->body.back(); }
 
-    // Modifiers
+    /// Modifiers
     pair<int, int> moveUp();
     pair<int, int> moveDown();
 };

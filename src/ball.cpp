@@ -1,24 +1,25 @@
 #include "ball.hpp"
 
-Ball::Ball(const pair<int, int> &p) {
+Ball::Ball(const pair<int, int> &location) {
     static constexpr char BALL_CH = '*';
 
     init_pair(2, COLOR_YELLOW, -1);
 
     this->setChar(BALL_CH, 2);
-    this->setHead(p);
-    this->start = p;
+    this->setHead(location);
+    this->start = location;
 }
 
-// @brief update head based on current directions
-pair<int, int> Ball::calculateNewHead() {
+/// @brief calculate next location based on current directions
+/// @return pair containing nextLocation
+pair<int, int> Ball::calculateNextLocation() {
 
-    pair<int, int> nextHead;
+    pair<int, int> nextLocation;
 
-    this->goingUp ? nextHead.first = this->head.first - 1
-                  : nextHead.first = this->head.first + 1;
-    this->goingLeft ? nextHead.second = this->head.second - 1
-                    : nextHead.second = this->head.second + 1;
+    this->goingUp ? nextLocation.first = this->head.first - 1
+                  : nextLocation.first = this->head.first + 1;
+    this->goingLeft ? nextLocation.second = this->head.second - 1
+                    : nextLocation.second = this->head.second + 1;
 
-    return nextHead;
+    return nextLocation;
 }

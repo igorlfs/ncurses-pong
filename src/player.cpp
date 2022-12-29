@@ -10,18 +10,18 @@ bool Player::isOutOfBounds(const int &c, const int &max) const {
     return false;
 }
 
-void Player::move(const int &c) {
-    if (c == this->up) {
+void Player::move(const int &direction) {
+    if (direction == this->up) {
         this->legacyPosition = this->racket.moveUp();
     } else {
         this->legacyPosition = this->racket.moveDown();
     }
 }
 
-void Player::print(Board b) const {
+void Player::print(Board board) const {
     if (this->legacyPosition != Drawable::DEFAULT_PAIR) {
-        b.print(this->legacyPosition.first, this->legacyPosition.second,
-                Drawable::BLANK);
+        board.print(this->legacyPosition.first, this->legacyPosition.second,
+                    Drawable::BLANK);
     }
-    this->racket.printBody(b);
+    this->racket.printBody(board);
 }
