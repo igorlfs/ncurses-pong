@@ -1,6 +1,7 @@
-# Track Progress
-TODO
-# Executable
+# Executable and Build
 binary
-# clangd cache dir
+obj/
+
+# Editor junk
 .cache/
+compile_commands.json
